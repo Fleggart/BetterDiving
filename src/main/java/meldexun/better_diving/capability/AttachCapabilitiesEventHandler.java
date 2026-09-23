@@ -2,7 +2,7 @@ package meldexun.better_diving.capability;
 
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
-import meldexun.better_diving.capability.energy.CapabilityEnergyStorageProvider;
+
 import meldexun.better_diving.capability.inventory.CapabilityItemHandlerProvider;
 import meldexun.better_diving.capability.item.energy.CapabilityEnergyStorageItemProvider;
 import meldexun.better_diving.capability.item.inventory.CapabilityItemHandlerItemProvider;
@@ -10,12 +10,12 @@ import meldexun.better_diving.capability.item.oxygen.CapabilityOxygenProvider;
 import meldexun.better_diving.item.ItemDivingChest;
 import meldexun.better_diving.item.ItemEnergyStorage;
 import meldexun.better_diving.item.ItemTool;
-import meldexun.better_diving.tileentity.TileEntityEnergyGenerator;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
+
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -35,14 +35,6 @@ public class AttachCapabilitiesEventHandler {
                 CapabilityDivingAttributesProvider.createProvider((EntityPlayer) entity));
          }
     }
-
-	@SubscribeEvent
-	public static void onAttachCapabilitiesTileEntityEvent(AttachCapabilitiesEvent<TileEntity> event) {
-		TileEntity tileEntity = event.getObject();
-		if (tileEntity instanceof TileEntityEnergyGenerator) {
-			event.addCapability(CapabilityEnergyStorageProvider.LOCATION_ENERGY_STORAGE, CapabilityEnergyStorageProvider.createProvider((TileEntityEnergyGenerator) tileEntity));
-		}
-	}
 
     @SubscribeEvent
     public static void onAttachCapabilitiesItemStackEvent(AttachCapabilitiesEvent<ItemStack> event) {
