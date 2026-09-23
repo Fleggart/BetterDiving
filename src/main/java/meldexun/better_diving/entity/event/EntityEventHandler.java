@@ -26,9 +26,7 @@ public class EntityEventHandler {
 
 	@SubscribeEvent
 	public static void onLivingAttackEvent(LivingAttackEvent event) {
-		if (event.getEntity().getRidingEntity() instanceof EntitySeamoth && event.getSource().getImmediateSource() != null) {
-			event.setCanceled(true);
-		}
+		// Seamoth removed - no protection logic needed
 	}
 
 	@SubscribeEvent
