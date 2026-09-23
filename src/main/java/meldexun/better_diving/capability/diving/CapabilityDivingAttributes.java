@@ -3,7 +3,6 @@ package meldexun.better_diving.capability.diving;
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.item.oxygen.CapabilityOxygenProvider;
 import meldexun.better_diving.capability.item.oxygen.ICapabilityOxygen;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.integration.ArtemisLib;
 import meldexun.better_diving.integration.MatterOverdrive;
 import meldexun.better_diving.integration.Metamorph;
@@ -48,9 +47,6 @@ public class CapabilityDivingAttributes implements ICapabilityDivingAttributes {
 	private float prevDivingTickHorizontal;
 	private float divingTickVertical;
 	private float prevDivingTickVertical;
-
-	private boolean isInSeamoth;
-	private boolean isPrevInSeamoth;
 
 	public CapabilityDivingAttributes() {
 		this(null);
@@ -136,54 +132,41 @@ public class CapabilityDivingAttributes implements ICapabilityDivingAttributes {
 	}
 
 	@Override
-	public void tick() {
-		this.isPrevInSeamoth = this.isInSeamoth;
-		this.isInSeamoth = this.player.getRidingEntity() instanceof EntitySeamoth;
-
-		this.handleMovement();
-		if (this.player.world.isRemote) {
-			this.handleDiving();
-			if (!BetterDivingConfig.getInstance().general.oxygenSyncPackets) {
-				this.handleOxygen();
-			}
-		} else {
-			this.handleOxygen();
-			if (BetterDivingConfig.getInstance().general.oxygenSyncPackets) {
-				BetterDiving.network.sendTo(new SPacketSyncOxygen(this.player), (EntityPlayerMP) this.player);
-			}
-		}
-	}
+    public void tick() {
+       this.handleMovement();
+       if (this.player.world.isRemote) {
+          this.handleDiving();
+          if (!BetterDivingConfig.getInstance().general.oxygenSyncPackets) {
+             this.handleOxygen();
+          }
+       } else {
+          this.handleOxygen();
+          if (BetterDivingConfig.getInstance().general.oxygenSyncPackets) {
+             BetterDiving.network.sendTo(new SPacketSyncOxygen(this.player), (EntityPlayerMP) this.player);
+          }
+       } 
+    }
 
 	@Override
-	public void updateSize() {
-		if (BetterDivingConfig.getInstance().modules.divingMovement && BetterDivingConfig.getInstance().general.playerResizing) {
-			if (ArtemisLib.loaded && BetterDivingConfig.getInstance().general.artemisLibCompatibility) {
-				if (this.isInSeamoth) {
-					EntityHelper.updatePlayerSize(this.player, this.player.height * 0.85F, this.player.width, this.player.height * 0.646875F);
-				} else if (this.isPrevInSeamoth) {
-					this.player.eyeHeight = this.player.getDefaultEyeHeight();
-				}
-
-				if (this.isDiving) {
-					EntityHelper.updatePlayerSize(this.player, this.player.height * 0.333333F, this.player.width, this.player.height * 0.222222F);
-				} else if (this.prevIsDiving) {
-					this.player.eyeHeight = this.player.getDefaultEyeHeight();
-				}
-			} else {
-				if (this.isInSeamoth) {
-					EntityHelper.updatePlayerSize(this.player, 1.53F, 0.6F, 1.164375F);
-				} else if (this.isPrevInSeamoth) {
-					EntityHelper.resetPlayerSize(this.player);
-				}
-
-				if (this.isDiving) {
-					EntityHelper.updatePlayerSize(this.player, 0.6F, 0.6F, 0.4F);
-				} else if (this.prevIsDiving) {
-					EntityHelper.resetPlayerSize(this.player);
-				}
-			}
-		}
-	}
+    public void updateSize() {
+       if (BetterDivingConfig.getInstance().modules.divingMovement 
+          && BetterDivingConfig.getInstance().general.playerResizing) {
+          if (ArtemisLib.loaded && BetterDivingConfig.getInstance().general.artemisLibCompatibility) {
+             if (this.isDiving) {
+                 EntityHelper.updatePlayerSize(this.player, this.player.height * 0.333333F, 
+                    this.player.width, this.player.height * 0.222222F);
+             } else if (this.prevIsDiving) {
+                this.player.eyeHeight = this.player.getDefaultEyeHeight();
+             }
+          } else {
+              if (this.isDiving) {
+                EntityHelper.updatePlayerSize(this.player, 0.6F, 0.6F, 0.4F);
+              } else if (this.prevIsDiving) {
+                EntityHelper.resetPlayerSize(this.player);
+              }
+          }
+       }
+    }
 
 	protected void handleMovement() {
 		if (BetterDivingConfig.getInstance().modules.divingMovement && this.player.isInWater() && !this.player.capabilities.isFlying && !this.player.isRiding()) {
@@ -365,7 +348,7 @@ public class CapabilityDivingAttributes implements ICapabilityDivingAttributes {
 	protected void handleOxygen() {
 		if (BetterDivingConfig.getInstance().modules.oxygenHandling) {
 			int airUsage = 0;
-			if (this.player.isInsideOfMaterial(Material.WATER) && !this.player.canBreatheUnderwater() && !this.player.isPotionActive(MobEffects.WATER_BREATHING) && !this.player.capabilities.disableDamage && !(this.player.getRidingEntity() instanceof EntitySeamoth) && !Metamorph.hasWaterBreathing(this.player)
+			if (this.player.isInsideOfMaterial(Material.WATER) && !this.player.canBreatheUnderwater() && !this.player.isPotionActive(MobEffects.WATER_BREATHING) && !this.player.capabilities.disableDamage && !Metamorph.hasWaterBreathing(this.player)
 					&& !Vampirism.hasWaterBreathing(this.player) && !MatterOverdrive.hasWaterBreathing(this.player)) {
 				airUsage -= 1;
 				if (BetterDivingConfig.getInstance().divingValues.airEfficiency) {
