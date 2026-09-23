@@ -15,10 +15,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 @ObjectHolder(BetterDiving.MOD_ID)
 public class ModSounds {
 
-	public static final SoundEvent SEAMOTH_ENGINE_LOOP = null;
-	public static final SoundEvent SEAMOTH_ENTER = null;
-	public static final SoundEvent SEAMOTH_EXIT = null;
-	public static final SoundEvent SEAMOTH_IMPACT = null;
+	
+	
+	
 	@ObjectHolder("ambient.underwater.enter")
 	public static final SoundEvent UNDERWATER_ENTER = null;
 	@ObjectHolder("ambient.underwater.exit")
@@ -48,10 +47,6 @@ public class ModSounds {
 		@SubscribeEvent
 		public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
 			final SoundEvent[] sounds = {
-					SoundRegistrationHandler.createSoundEvent("seamoth_engine_loop"),
-					SoundRegistrationHandler.createSoundEvent("seamoth_enter"),
-					SoundRegistrationHandler.createSoundEvent("seamoth_exit"),
-					SoundRegistrationHandler.createSoundEvent("seamoth_impact"),
 					SoundRegistrationHandler.createSoundEvent("ambient.underwater.enter"),
 					SoundRegistrationHandler.createSoundEvent("ambient.underwater.exit"),
 					SoundRegistrationHandler.createSoundEvent("ambient.underwater.loop"),
