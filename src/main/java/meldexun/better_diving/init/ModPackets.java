@@ -34,12 +34,7 @@ public class ModPackets {
 	public static void registerMessages() {
 		BetterDiving.network.registerMessage(CPacketHandlerSyncOxygen.class, SPacketSyncOxygen.class, ModPackets.messageID++, Side.CLIENT);
 		BetterDiving.network.registerMessage(CPacketHandlerSyncConfig.class, SPacketSyncConfig.class, ModPackets.messageID++, Side.CLIENT);
-		BetterDiving.network.registerMessage(CPacketHandlerSyncSeamothEnergy.class, SPacketSyncSeamothEnergy.class, ModPackets.messageID++, Side.CLIENT);
-		BetterDiving.network.registerMessage(CPacketHandlerSyncSeamothBattery.class, SPacketSyncSeamothBattery.class, ModPackets.messageID++, Side.CLIENT);
-		BetterDiving.network.registerMessage(CPacketHandlerSyncSeamothInput.class, SPacketSyncSeamothInput.class, ModPackets.messageID++, Side.CLIENT);
 		BetterDiving.network.registerMessage(CPacketHandlerSyncPlayerInput.class, SPacketSyncPlayerInput.class, ModPackets.messageID++, Side.CLIENT);
-
-		BetterDiving.network.registerMessage(SPacketHandlerSyncSeamothInput.class, CPacketSyncSeamothInput.class, ModPackets.messageID++, Side.SERVER);
 		BetterDiving.network.registerMessage(SPacketHandlerSyncPlayerInput.class, CPacketSyncPlayerInput.class, ModPackets.messageID++, Side.SERVER);
 		BetterDiving.network.registerMessage(SPacketHandlerCraftRecipe.class, CPacketCraftRecipe.class, ModPackets.messageID++, Side.SERVER);
 	}
