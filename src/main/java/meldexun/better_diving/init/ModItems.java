@@ -16,7 +16,6 @@ import meldexun.better_diving.item.ItemFish;
 import meldexun.better_diving.item.ItemHabitatBuilder;
 import meldexun.better_diving.item.ItemPowerCell;
 import meldexun.better_diving.item.ItemSeaglide;
-import meldexun.better_diving.item.ItemSeamoth;
 import meldexun.better_diving.item.ItemTooltip;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.creativetab.CreativeTabs;
@@ -66,7 +65,7 @@ public class ModItems {
 	public static final ItemDivingLegs REINFORCED_WETSUIT_LEGGINGS = null;
 	public static final ItemDivingFeet REINFORCED_FINS = null;
 
-	public static final ItemSeamoth SEAMOTH = null;
+	
 
 	public static final ItemFish PEEPER = null;
 	public static final ItemFish PEEPER_COOKED = null;
@@ -135,7 +134,7 @@ public class ModItems {
 					ItemRegistrationHandler.setItemName(new ItemDivingLegs(ModMaterials.REINFORCED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.reinforcedDivingGear), "reinforced_wetsuit_leggings"),
 					ItemRegistrationHandler.setItemName(new ItemDivingFeet(ModMaterials.REINFORCED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.reinforcedDivingGear), "reinforced_fins"),
 
-					ItemRegistrationHandler.setItemName(new ItemSeamoth(), "seamoth"),
+					
 
 					ItemRegistrationHandler.setItemName(new ItemFish(1, 0.5F), "peeper"),
 					ItemRegistrationHandler.setItemName(new ItemFish(3, 0.5F), "peeper_cooked"),
