@@ -9,19 +9,19 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.block.BlockCreepvine;
 import meldexun.better_diving.block.BlockCreepvineSeed;
 import meldexun.better_diving.block.BlockCreepvineTop;
-import meldexun.better_diving.block.BlockFabricator;
+
 import meldexun.better_diving.block.BlockOutcrop;
-import meldexun.better_diving.block.BlockSeabaseLadder;
+
 import meldexun.better_diving.block.BlockSeagrassTall;
-import meldexun.better_diving.block.BlockSolarPanel;
-import meldexun.better_diving.block.BlockStructure;
+
+
 import meldexun.better_diving.block.BlockUnderwaterBlock;
 import meldexun.better_diving.item.ItemBlockCreepvine;
 import meldexun.better_diving.item.ItemBlockTooltip;
 import meldexun.better_diving.tileentity.TileEntityCreepvine;
 import meldexun.better_diving.tileentity.TileEntityCreepvineTop;
-import meldexun.better_diving.tileentity.TileEntitySolarPanel;
-import meldexun.better_diving.tileentity.TileEntityStructure;
+
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -47,10 +47,6 @@ public class ModBlocks {
 	public static final BlockSeagrassTall SEAGRASS_TALL_BOTTOM = null;
 	public static final BlockSeagrassTall SEAGRASS_TALL_TOP = null;
 	public static final BlockUnderwaterBlock ACID_MUSHROOM = null;
-
-	public static final BlockStructure STRUCTURE_BLOCK = null;
-	public static final BlockSolarPanel SOLAR_PANEL = null;
-	public static final BlockFabricator FABRICATOR = null;
 
 	private ModBlocks() {
 
@@ -79,10 +75,10 @@ public class ModBlocks {
 					BlockRegistrationHandler.setBlockName(new BlockSeagrassTall(), "seagrass_tall_bottom"),
 					BlockRegistrationHandler.setBlockNameAndTab(new BlockSeagrassTall(), "seagrass_tall_top", null),
 					BlockRegistrationHandler.setBlockName(new BlockUnderwaterBlock(), "acid_mushroom"),
-					BlockRegistrationHandler.setBlockName(new BlockStructure(), "structure_block"),
-					BlockRegistrationHandler.setBlockName(new BlockSolarPanel(), "solar_panel"),
-					BlockRegistrationHandler.setBlockName(new BlockFabricator(), "fabricator"),
-					BlockRegistrationHandler.setBlockName(new BlockSeabaseLadder(), "seabase_ladder") };
+					
+					
+					
+					
 
 			IForgeRegistry<Block> registry = event.getRegistry();
 
@@ -91,10 +87,9 @@ public class ModBlocks {
 				BlockRegistrationHandler.BLOCKS.add(block);
 			}
 
-			GameRegistry.registerTileEntity(TileEntityStructure.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_building"));
+			
 			GameRegistry.registerTileEntity(TileEntityCreepvine.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_creepvine"));
 			GameRegistry.registerTileEntity(TileEntityCreepvineTop.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_creepvine_top"));
-			GameRegistry.registerTileEntity(TileEntitySolarPanel.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_solar_panel"));
 		}
 
 		private static Block setBlockName(Block block, String name) {
