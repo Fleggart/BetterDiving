@@ -4,21 +4,13 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.network.handler.CPacketHandlerSyncConfig;
 import meldexun.better_diving.network.handler.CPacketHandlerSyncOxygen;
 import meldexun.better_diving.network.handler.CPacketHandlerSyncPlayerInput;
-import meldexun.better_diving.network.handler.CPacketHandlerSyncSeamothBattery;
-import meldexun.better_diving.network.handler.CPacketHandlerSyncSeamothEnergy;
-import meldexun.better_diving.network.handler.CPacketHandlerSyncSeamothInput;
 import meldexun.better_diving.network.handler.SPacketHandlerCraftRecipe;
 import meldexun.better_diving.network.handler.SPacketHandlerSyncPlayerInput;
-import meldexun.better_diving.network.handler.SPacketHandlerSyncSeamothInput;
 import meldexun.better_diving.network.packet.CPacketCraftRecipe;
 import meldexun.better_diving.network.packet.CPacketSyncPlayerInput;
-import meldexun.better_diving.network.packet.CPacketSyncSeamothInput;
 import meldexun.better_diving.network.packet.SPacketSyncConfig;
 import meldexun.better_diving.network.packet.SPacketSyncOxygen;
 import meldexun.better_diving.network.packet.SPacketSyncPlayerInput;
-import meldexun.better_diving.network.packet.SPacketSyncSeamothBattery;
-import meldexun.better_diving.network.packet.SPacketSyncSeamothEnergy;
-import meldexun.better_diving.network.packet.SPacketSyncSeamothInput;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class ModPackets {
