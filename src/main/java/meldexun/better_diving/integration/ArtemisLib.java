@@ -1,14 +1,11 @@
 package meldexun.better_diving.integration;
 
 import org.lwjgl.opengl.GL11;
-
 import com.artemis.artemislib.compatibilities.sizeCap.ISizeCap;
 import com.artemis.artemislib.compatibilities.sizeCap.SizeCapPro;
 import com.artemis.artemislib.util.attributes.ArtemisLibAttributes;
-
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
 import meldexun.better_diving.capability.diving.ICapabilityDivingAttributes;
-import meldexun.better_diving.entity.EntitySeamoth;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Optional;
