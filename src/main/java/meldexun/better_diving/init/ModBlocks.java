@@ -9,19 +9,13 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.block.BlockCreepvine;
 import meldexun.better_diving.block.BlockCreepvineSeed;
 import meldexun.better_diving.block.BlockCreepvineTop;
-
 import meldexun.better_diving.block.BlockOutcrop;
-
 import meldexun.better_diving.block.BlockSeagrassTall;
-
-
 import meldexun.better_diving.block.BlockUnderwaterBlock;
 import meldexun.better_diving.item.ItemBlockCreepvine;
 import meldexun.better_diving.item.ItemBlockTooltip;
 import meldexun.better_diving.tileentity.TileEntityCreepvine;
 import meldexun.better_diving.tileentity.TileEntityCreepvineTop;
-
-
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -74,11 +68,8 @@ public class ModBlocks {
 					BlockRegistrationHandler.setBlockName(new BlockUnderwaterBlock(), "seagrass"),
 					BlockRegistrationHandler.setBlockName(new BlockSeagrassTall(), "seagrass_tall_bottom"),
 					BlockRegistrationHandler.setBlockNameAndTab(new BlockSeagrassTall(), "seagrass_tall_top", null),
-					BlockRegistrationHandler.setBlockName(new BlockUnderwaterBlock(), "acid_mushroom"),
-					
-					
-					
-					
+					BlockRegistrationHandler.setBlockName(new BlockUnderwaterBlock(), "acid_mushroom")
+			};  // ← 关键修复：这里缺少 `;`
 
 			IForgeRegistry<Block> registry = event.getRegistry();
 
@@ -87,7 +78,6 @@ public class ModBlocks {
 				BlockRegistrationHandler.BLOCKS.add(block);
 			}
 
-			
 			GameRegistry.registerTileEntity(TileEntityCreepvine.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_creepvine"));
 			GameRegistry.registerTileEntity(TileEntityCreepvineTop.class, new ResourceLocation(BetterDiving.MOD_ID, "tile_entity_creepvine_top"));
 		}
