@@ -1,6 +1,5 @@
 package meldexun.better_diving.client.audio;
 
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.init.ModSounds;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.audio.MovingSound;
@@ -42,11 +41,6 @@ public class UnderwaterAmbientLoopSound extends MovingSound {
 
 			this.volume = MathHelper.clamp(this.tick / 40.0F, 0.0F, 1.0F);
 			this.pitch = 1.0F;
-
-			if (this.player.getRidingEntity() instanceof EntitySeamoth) {
-				this.volume *= 0.6F;
-				this.pitch *= 0.85F;
-			}
 		}
 	}
 
