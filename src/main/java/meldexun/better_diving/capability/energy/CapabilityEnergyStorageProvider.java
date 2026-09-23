@@ -2,7 +2,6 @@ package meldexun.better_diving.capability.energy;
 
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.BasicCapabilityProviderSerializable;
-import meldexun.better_diving.tileentity.TileEntityEnergyGenerator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
@@ -18,10 +17,6 @@ public class CapabilityEnergyStorageProvider extends BasicCapabilityProviderSeri
 
 	public static CapabilityEnergyStorageProvider createProvider(int capacity, int maxReceive, int maxExtract, int energy) {
 		return new CapabilityEnergyStorageProvider(CapabilityEnergy.ENERGY, new CapabilityEnergyStorage(capacity, maxReceive, maxExtract, energy));
-	}
-
-	public static CapabilityEnergyStorageProvider createProvider(TileEntityEnergyGenerator tileEntity) {
-		return CapabilityEnergyStorageProvider.createProvider(tileEntity.getCapacity(), tileEntity.getMaxReceive(), tileEntity.getMaxExtract(), tileEntity.getEnergy());
 	}
 
 }
