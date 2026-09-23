@@ -6,7 +6,6 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
 import meldexun.better_diving.capability.diving.ICapabilityDivingAttributes;
 import meldexun.better_diving.client.renderer.entity.RenderPlayerCustom;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.init.ModItems;
 import meldexun.better_diving.integration.ArtemisLib;
 import meldexun.better_diving.item.AbstractItemDivingGear;
@@ -50,7 +49,7 @@ public class ClientEventHandler {
 		EntityPlayer player = event.getPlayer();
 
 		if (BetterDivingConfig.getInstance().modules.visionUnderWater && BetterDivingConfig.getInstance().client.hideWaterOverlay && event.getBlockForOverlay().getBlock() == Blocks.WATER
-				&& (player.inventory.armorInventory.get(3).getItem() instanceof AbstractItemDivingGear || player.getRidingEntity() instanceof EntitySeamoth)) {
+				&& (player.inventory.armorInventory.get(3).getItem() instanceof AbstractItemDivingGear)) {
 			event.setCanceled(true);
 		}
 	}
@@ -162,35 +161,7 @@ public class ClientEventHandler {
 		EntityPlayer player = event.getEntityPlayer();
 		ICapabilityDivingAttributes idiving = player.getCapability(CapabilityDivingAttributesProvider.DIVING_ATTRIBUTES, null);
 
-		if (player.getRidingEntity() instanceof EntitySeamoth) {
-			double sinYaw = Math.sin(Math.toRadians(player.rotationYaw));
-			double cosYaw = Math.cos(Math.toRadians(player.rotationYaw));
-			GL11.glPushMatrix();
-			if (ArtemisLib.loaded) {
-				GL11.glTranslated(x, y + 0.8D, z);
-				GL11.glRotated(player.rotationPitch, cosYaw, 0.0D, sinYaw);
-				GL11.glTranslated(-x, -y - 0.8D - 0.4D * ArtemisLib.getHeightScale(player), -z);
-				ArtemisLib.rescale(player);
-			} else {
-				GL11.glTranslated(x, y + 0.8D, z);
-				GL11.glRotated(player.rotationPitch, cosYaw, 0.0D, sinYaw);
-				GL11.glTranslated(-x, -y - 1.2D, -z);
-			}
-			ClientEventHandler.prevRotationPitch = player.prevRotationPitch;
-			ClientEventHandler.rotationPitch = player.rotationPitch;
-			ClientEventHandler.prevRenderYawOffset = player.prevRenderYawOffset;
-			ClientEventHandler.renderYawOffset = player.renderYawOffset;
-			player.setSprinting(false);
-			player.setSneaking(false);
-			player.prevRotationPitch = 0.0F;
-			player.rotationPitch = 0.0F;
-			player.prevRenderYawOffset = MathHelper.clamp(player.prevRenderYawOffset, player.prevRotationYaw - 10.0F, player.prevRotationYaw + 10.0F);
-			player.renderYawOffset = MathHelper.clamp(player.renderYawOffset, player.rotationYaw - 10.0F, player.rotationYaw + 10.0F);
-			if (player instanceof EntityPlayerSP) {
-				ClientEventHandler.movementInputSneak = ((EntityPlayerSP) player).movementInput.sneak;
-				((EntityPlayerSP) player).movementInput.sneak = false;
-			}
-		} else if (idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
+		if (idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
 			double divingTick = MathHelper.clampedLerp(idiving.getPrevDivingTick(), idiving.getDivingTick(), partialTicks);
 			double divingTickHorizontal = MathHelper.clampedLerp(idiving.getPrevDivingTickHorizontal(), idiving.getDivingTickHorizontal(), partialTicks);
 			double divingTickVertical = MathHelper.clampedLerp(idiving.getPrevDivingTickVertical(), idiving.getDivingTickVertical(), partialTicks);
@@ -247,7 +218,7 @@ public class ClientEventHandler {
 		EntityPlayer player = event.getEntityPlayer();
 		ICapabilityDivingAttributes idiving = player.getCapability(CapabilityDivingAttributesProvider.DIVING_ATTRIBUTES, null);
 
-		if (player.getRidingEntity() instanceof EntitySeamoth || idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
+		if (idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
 			GL11.glPopMatrix();
 			player.prevRotationPitch = ClientEventHandler.prevRotationPitch;
 			player.rotationPitch = ClientEventHandler.rotationPitch;
