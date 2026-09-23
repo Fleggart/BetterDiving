@@ -2,6 +2,7 @@ package meldexun.better_diving.capability;
 
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
+import meldexun.better_diving.capability.energy.CapabilityEnergyStorageProvider;
 import meldexun.better_diving.capability.item.energy.CapabilityEnergyStorageItemProvider;
 import meldexun.better_diving.capability.item.inventory.CapabilityItemHandlerItemProvider;
 import meldexun.better_diving.capability.item.oxygen.CapabilityOxygenProvider;
