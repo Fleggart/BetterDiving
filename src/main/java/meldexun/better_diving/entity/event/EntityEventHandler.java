@@ -1,7 +1,6 @@
 package meldexun.better_diving.entity.event;
 
 import meldexun.better_diving.BetterDiving;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
