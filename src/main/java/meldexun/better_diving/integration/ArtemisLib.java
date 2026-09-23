@@ -30,9 +30,7 @@ public class ArtemisLib {
 			ISizeCap isizecap = player.getCapability(SizeCapPro.sizeCapability, null);
 			if (isizecap.getTrans()) {
 				ICapabilityDivingAttributes idiving = player.getCapability(CapabilityDivingAttributesProvider.DIVING_ATTRIBUTES, null);
-				if (player.getRidingEntity() instanceof EntitySeamoth) {
-					GL11.glScaled(1.0D, 1.0D / 0.85D, 1.0D);
-				} else if (idiving.isDiving()) {
+				if (idiving.isDiving()) {
 					GL11.glScaled(1.0D, 3.0D, 1.0D);
 				}
 			}
