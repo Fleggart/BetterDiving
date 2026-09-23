@@ -29,15 +29,14 @@ public class AttachCapabilitiesEventHandler {
 
 	}
 
-	@SubscribeEvent
-	public static void onAttachCapabilitiesEntityEvent(AttachCapabilitiesEvent<Entity> event) {
-		Entity entity = event.getObject();
-		if (entity instanceof EntityPlayer) {
-			event.addCapability(CapabilityDivingAttributesProvider.LOCATION_DIVING_ATTRIBUTES, CapabilityDivingAttributesProvider.createProvider((EntityPlayer) entity));
-		} else if (entity instanceof EntitySeamoth) {
-			event.addCapability(CapabilityItemHandlerProvider.LOCATION_ITEM_STACK_HANDLER, CapabilityItemHandlerProvider.createProvider(5));
-		}
-	}
+    @SubscribeEvent
+    public static void onAttachCapabilitiesEntityEvent(AttachCapabilitiesEvent<Entity> event) {
+         Entity entity = event.getObject();
+         if (entity instanceof EntityPlayer) {
+            event.addCapability(CapabilityDivingAttributesProvider.LOCATION_DIVING_ATTRIBUTES, 
+                CapabilityDivingAttributesProvider.createProvider((EntityPlayer) entity));
+         }
+    }
 
 	@SubscribeEvent
 	public static void onAttachCapabilitiesTileEntityEvent(AttachCapabilitiesEvent<TileEntity> event) {
@@ -47,19 +46,19 @@ public class AttachCapabilitiesEventHandler {
 		}
 	}
 
-	@SubscribeEvent
-	public static void onAttachCapabilitiesItemStackEvent(AttachCapabilitiesEvent<ItemStack> event) {
-		ItemStack stack = event.getObject();
-		Item item = stack.getItem();
-		if (item instanceof ItemDivingChest) {
-			event.addCapability(CapabilityOxygenProvider.LOCATION_OXYGEN, CapabilityOxygenProvider.createProvider(stack));
-		} else if (item instanceof ItemEnergyStorage) {
-			event.addCapability(CapabilityEnergyStorageProvider.LOCATION_ENERGY_STORAGE, CapabilityEnergyStorageItemProvider.createProvider(stack));
-		} else if (item instanceof ItemSeamoth) {
-			event.addCapability(CapabilityItemHandlerProvider.LOCATION_ITEM_STACK_HANDLER, CapabilityItemHandlerItemProvider.createProvider(stack, 5));
-		} else if (item instanceof ItemTool) {
-			event.addCapability(CapabilityItemHandlerProvider.LOCATION_ITEM_STACK_HANDLER, CapabilityItemHandlerItemProvider.createProvider(stack, 1));
-		}
-	}
+    @SubscribeEvent
+    public static void onAttachCapabilitiesItemStackEvent(AttachCapabilitiesEvent<ItemStack> event) {
+        ItemStack stack = event.getObject();
+        Item item = stack.getItem();
+        if (item instanceof ItemDivingChest) {
+           event.addCapability(CapabilityOxygenProvider.LOCATION_OXYGEN, CapabilityOxygenProvider.createProvider(stack));
+        } else if (item instanceof ItemEnergyStorage) {
+           event.addCapability(CapabilityEnergyStorageProvider.LOCATION_ENERGY_STORAGE, 
+               CapabilityEnergyStorageItemProvider.createProvider(stack));
+        } else if (item instanceof ItemTool) {
+           event.addCapability(CapabilityItemHandlerProvider.LOCATION_ITEM_STACK_HANDLER, 
+              CapabilityItemHandlerItemProvider.createProvider(stack, 1));
+        }
+    }
 
 }
