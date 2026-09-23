@@ -4,8 +4,6 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
 import meldexun.better_diving.capability.diving.ICapabilityDivingAttributes;
 import meldexun.better_diving.client.gui.GuiOxygen;
-import meldexun.better_diving.client.gui.GuiSeamoth;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -27,7 +25,6 @@ public class GuiEventHandler {
 	}
 
 	private static final GuiOxygen GUI_OXYGEN = new GuiOxygen();
-	private static final GuiSeamoth GUI_SEAMOTH = new GuiSeamoth();
 
 	@SubscribeEvent
 	public static void onRenderGameOverlayEventPost(RenderGameOverlayEvent.Post event) {
@@ -41,9 +38,6 @@ public class GuiEventHandler {
 				if (mode == 0 || (mode == 1 && player.isInWater()) || (mode == 2 && player.isInsideOfMaterial(Material.WATER)) || (mode == 3 && (player.isInsideOfMaterial(Material.WATER) || idiving.getOxygenFromPlayerInPercent() < 1.0D))) {
 					GuiEventHandler.GUI_OXYGEN.render();
 				}
-			}
-			if (player.getRidingEntity() instanceof EntitySeamoth && config.client.guiSeamothConfig.enabled) {
-				GuiEventHandler.GUI_SEAMOTH.render();
 			}
 		}
 	}
