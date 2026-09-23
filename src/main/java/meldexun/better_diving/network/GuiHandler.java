@@ -16,8 +16,8 @@ public class GuiHandler implements IGuiHandler {
 
 	
 	
-	public static final int GUI_FABRICATOR = 2;
-	public static final int GUI_HABITAT_BUILDER = 3;
+	public static final int GUI_FABRICATOR = 0;
+	public static final int GUI_HABITAT_BUILDER = 1;
 
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
