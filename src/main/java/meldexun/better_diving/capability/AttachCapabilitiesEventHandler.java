@@ -7,10 +7,8 @@ import meldexun.better_diving.capability.inventory.CapabilityItemHandlerProvider
 import meldexun.better_diving.capability.item.energy.CapabilityEnergyStorageItemProvider;
 import meldexun.better_diving.capability.item.inventory.CapabilityItemHandlerItemProvider;
 import meldexun.better_diving.capability.item.oxygen.CapabilityOxygenProvider;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.item.ItemDivingChest;
 import meldexun.better_diving.item.ItemEnergyStorage;
-import meldexun.better_diving.item.ItemSeamoth;
 import meldexun.better_diving.item.ItemTool;
 import meldexun.better_diving.tileentity.TileEntityEnergyGenerator;
 import net.minecraft.entity.Entity;
