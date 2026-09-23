@@ -6,7 +6,6 @@ import meldexun.better_diving.entity.EntityBoomerang;
 import meldexun.better_diving.entity.EntityGarryfish;
 import meldexun.better_diving.entity.EntityHolefish;
 import meldexun.better_diving.entity.EntityPeeper;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.registry.EntitySpawnEntry;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.entity.Entity;
@@ -37,7 +36,6 @@ public class ModEntities {
 		@SubscribeEvent
 		public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
 			final EntityEntry[] entityEntries = {
-					EntityRegistrationHandler.createEntityEntry(EntitySeamoth.class, "seamoth", 64, 1, true).build(),
 					EntityRegistrationHandler.createEntityEntry(EntityPeeper.class, "peeper", 64, 1, true).egg(0x1C2833, 0xFFE03C).build(),
 					EntityRegistrationHandler.createEntityEntry(EntityBladderfish.class, "bladderfish", 64, 1, true).egg(0x4C2E44, 0x5D5D91).build(),
 					EntityRegistrationHandler.createEntityEntry(EntityGarryfish.class, "garryfish", 64, 1, true).egg(0x4C2E44, 0x5D5D91).build(),
