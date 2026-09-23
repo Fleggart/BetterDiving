@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class ClientProxy implements IProxy {
 
-	public static KeyBinding keyBindSeamothDescend = new KeyBinding("Seamoth descend", Keyboard.KEY_C, "Better Diving");
+	
 	// public static KeyBinding keyBindSwapBattery = new KeyBinding("Swap battery", Keyboard.KEY_R, "Better Diving");
 
 	@Override
@@ -22,7 +22,7 @@ public class ClientProxy implements IProxy {
 
 	@Override
 	public void init() {
-		ClientRegistry.registerKeyBinding(ClientProxy.keyBindSeamothDescend);
+		
 		// ClientRegistry.registerKeyBinding(keyBindSwapBattery);
 
 		ClientEventHandler.registerRenderers();
