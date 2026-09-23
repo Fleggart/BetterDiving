@@ -3,7 +3,6 @@ package meldexun.better_diving.client.audio.event;
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.client.audio.UnderwaterAmbientLoopSound;
 import meldexun.better_diving.client.audio.UnderwaterAmbientSound;
-import meldexun.better_diving.entity.EntitySeamoth;
 import meldexun.better_diving.init.ModSounds;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.block.material.Material;
@@ -57,12 +56,12 @@ public class SoundEventHandler {
 					}
 				}
 
-				if (!SoundEventHandler.prevInsideWater && player.isInsideOfMaterial(Material.WATER) && !(player.getRidingEntity() instanceof EntitySeamoth)) {
+				if (!SoundEventHandler.prevInsideWater && player.isInsideOfMaterial(Material.WATER)) {
 					soundHandler.playSound(new UnderwaterAmbientSound(player, ModSounds.UNDERWATER_ENTER));
-				} else if (SoundEventHandler.prevInsideWater && !player.isInsideOfMaterial(Material.WATER) && !(player.getRidingEntity() instanceof EntitySeamoth)) {
+				} else if (SoundEventHandler.prevInsideWater && !player.isInsideOfMaterial(Material.WATER)) {
 					soundHandler.playSound(new UnderwaterAmbientSound(player, ModSounds.UNDERWATER_EXIT));
 				}
-				SoundEventHandler.prevInsideWater = player.isInsideOfMaterial(Material.WATER) && !(player.getRidingEntity() instanceof EntitySeamoth);
+				SoundEventHandler.prevInsideWater = player.isInsideOfMaterial(Material.WATER);
 			}
 		}
 	}
