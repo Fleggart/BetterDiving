@@ -67,11 +67,11 @@ dependencies {
     includedDependencies 'meldexun:ReflectionUtil:1.0.0@jar'
 
     buildDependencies 'curse.maven:ArtemisLib-313590:2741812'
-    // buildDependencies 'curse.maven:IndustrialCraft:2980904'
-    // buildDependencies 'curse.maven:MatterOverdrive:2699215'
+    buildDependencies 'curse.maven:IndustrialCraft-242638:2980904'
+    buildDependencies 'curse.maven:MatterOverdrive-308192:2699215'
     // buildDependencies 'curse.maven:McLib:3000300'
     buildDependencies 'curse.maven:Metamorph-256932:3000304'
-    // buildDependencies 'curse.maven:Vampirism:2890062'
+    buildDependencies 'curse.maven:Vampirism-233029:2890062'
 }
 
 jar {
