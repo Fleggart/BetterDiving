@@ -25,7 +25,6 @@ public class ModBlocks {
 
 	public static final BlockOutcrop LIMESTONE_OUTCROP = null;
 	public static final BlockOutcrop SANDSTONE_OUTCROP = null;
-	public static final BlockCreepvineTop CREEPVINE_TOP = null;
 	public static final BlockUnderwaterBlock SEAGRASS = null;
 	public static final BlockSeagrassTall SEAGRASS_TALL_BOTTOM = null;
 	public static final BlockSeagrassTall SEAGRASS_TALL_TOP = null;
