@@ -27,7 +27,7 @@ public class WorldGenOcean implements IWorldGenerator {
 		WorldGenOcean.oreGenerators.add(new WorldGeneratorOcean(ModBlocks.LIMESTONE_OUTCROP.getDefaultState(), BetterDivingConfig.getInstance().ores.limestone));
 		WorldGenOcean.oreGenerators.add(new WorldGeneratorOcean(ModBlocks.SANDSTONE_OUTCROP.getDefaultState(), BetterDivingConfig.getInstance().ores.sandstone));
 
-		WorldGenOcean.plantGenerators.add(new WorldGeneratorCreepvine());
+		
 		WorldGenOcean.plantGenerators.add(new WorldGeneratorOcean(ModBlocks.ACID_MUSHROOM.getDefaultState(), BetterDivingConfig.getInstance().plants.acidMushroom));
 		WorldGenOcean.plantGenerators.add(new WorldGeneratorSeagrassTall());
 		WorldGenOcean.plantGenerators.add(new WorldGeneratorOcean(ModBlocks.SEAGRASS.getDefaultState(), BetterDivingConfig.getInstance().plants.seagrass));
