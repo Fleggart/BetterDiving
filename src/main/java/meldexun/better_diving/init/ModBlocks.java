@@ -81,9 +81,9 @@ public class ModBlocks {
 			IForgeRegistry<Item> registry = event.getRegistry();
 
 			
-			registry.register(creepvine);
 			
-			BlockRegistrationHandler.ITEM_BLOCKS.add(creepvine);
+			
+			
 
 			for (Block block : BlockRegistrationHandler.BLOCKS) {
 				if (!BlockRegistrationHandler.REGISTERED_ITEM_BLOCKS.contains(block)) {
