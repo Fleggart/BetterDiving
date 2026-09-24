@@ -7,7 +7,6 @@ import javax.annotation.Nullable;
 
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.item.ItemBattery;
-import meldexun.better_diving.item.ItemCreepvineSeedCluster;
 import meldexun.better_diving.item.ItemDivingChest;
 import meldexun.better_diving.item.ItemDivingFeet;
 import meldexun.better_diving.item.ItemDivingHelm;
@@ -43,7 +42,7 @@ public class ModItems {
 	public static final ItemBattery BATTERY = null;
 	public static final ItemPowerCell POWER_CELL = null;
 
-	public static final ItemCreepvineSeedCluster CREEPVINE_SEED_CLUSTER = null;
+	
 
 	public static final ItemTooltip LUBRICANT = null;
 	public static final ItemTooltip SILICONE_RUBBER = null;
