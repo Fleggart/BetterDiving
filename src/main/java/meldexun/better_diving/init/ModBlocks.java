@@ -2,16 +2,11 @@ package meldexun.better_diving.init;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.Nullable;
 import meldexun.better_diving.BetterDiving;
-import meldexun.better_diving.block.BlockCreepvine;
-import meldexun.better_diving.block.BlockCreepvineSeed;
-import meldexun.better_diving.block.BlockCreepvineTop;
 import meldexun.better_diving.block.BlockOutcrop;
 import meldexun.better_diving.block.BlockSeagrassTall;
 import meldexun.better_diving.block.BlockUnderwaterBlock;
-import meldexun.better_diving.item.ItemBlockCreepvine;
 import meldexun.better_diving.item.ItemBlockTooltip;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -30,9 +25,6 @@ public class ModBlocks {
 
 	public static final BlockOutcrop LIMESTONE_OUTCROP = null;
 	public static final BlockOutcrop SANDSTONE_OUTCROP = null;
-
-	public static final BlockCreepvine CREEPVINE = null;
-	public static final BlockCreepvineSeed CREEPVINE_SEED = null;
 	public static final BlockCreepvineTop CREEPVINE_TOP = null;
 	public static final BlockUnderwaterBlock SEAGRASS = null;
 	public static final BlockSeagrassTall SEAGRASS_TALL_BOTTOM = null;
