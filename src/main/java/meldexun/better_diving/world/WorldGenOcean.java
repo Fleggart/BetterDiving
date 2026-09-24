@@ -6,7 +6,6 @@ import java.util.Random;
 
 import meldexun.better_diving.init.ModBlocks;
 import meldexun.better_diving.util.BetterDivingConfig;
-import meldexun.better_diving.world.generator.WorldGeneratorCreepvine;
 import meldexun.better_diving.world.generator.WorldGeneratorOcean;
 import meldexun.better_diving.world.generator.WorldGeneratorSandLayer;
 import meldexun.better_diving.world.generator.WorldGeneratorSeagrassTall;
