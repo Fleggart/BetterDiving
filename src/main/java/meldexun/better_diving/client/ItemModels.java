@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import meldexun.better_diving.BetterDiving;
-import meldexun.better_diving.block.BlockCreepvine;
 import meldexun.better_diving.init.ModBlocks;
 import meldexun.better_diving.init.ModItems;
 import net.minecraft.block.Block;
@@ -53,7 +52,7 @@ public class ItemModels {
 				ItemModels.ignoreProperty(block, BlockLiquid.LEVEL);
 			}
 		}
-		ItemModels.ignoreProperty(ModBlocks.CREEPVINE, BlockCreepvine.SEED);
+		
 	}
 
 	private static void registerItemModel(Item item) {
