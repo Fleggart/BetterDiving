@@ -50,9 +50,9 @@ public class ModBlocks {
 			final Block[] blocks = {
 					BlockRegistrationHandler.setBlockName(new BlockOutcrop(), "limestone_outcrop"),
 					BlockRegistrationHandler.setBlockName(new BlockOutcrop(), "sandstone_outcrop"),
-					BlockRegistrationHandler.setBlockName(new BlockCreepvine(), "creepvine"),
-					BlockRegistrationHandler.setBlockNameAndTab(new BlockCreepvineSeed(), "creepvine_seed", null),
-					BlockRegistrationHandler.setBlockNameAndTab(new BlockCreepvineTop(), "creepvine_top", null),
+					
+					
+					
 					BlockRegistrationHandler.setBlockName(new BlockUnderwaterBlock(), "seagrass"),
 					BlockRegistrationHandler.setBlockName(new BlockSeagrassTall(), "seagrass_tall_bottom"),
 					BlockRegistrationHandler.setBlockNameAndTab(new BlockSeagrassTall(), "seagrass_tall_top", null),
@@ -80,9 +80,9 @@ public class ModBlocks {
 		public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 			IForgeRegistry<Item> registry = event.getRegistry();
 
-			ItemBlock creepvine = new ItemBlockCreepvine();
+			
 			registry.register(creepvine);
-			BlockRegistrationHandler.REGISTERED_ITEM_BLOCKS.add(ModBlocks.CREEPVINE);
+			
 			BlockRegistrationHandler.ITEM_BLOCKS.add(creepvine);
 
 			for (Block block : BlockRegistrationHandler.BLOCKS) {
