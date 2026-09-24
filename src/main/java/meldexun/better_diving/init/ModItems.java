@@ -105,23 +105,17 @@ public class ModItems {
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "silver_ore"),
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "lead"),
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "gold"),
-
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "titanium_ingot"),
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "wiring_kit"),
 					ItemRegistrationHandler.setItemName(new ItemBattery(1000000, 125, 1000), "battery"),
 					ItemRegistrationHandler.setItemName(new ItemPowerCell(2000000, 125, 1000), "power_cell"),
-
-					ItemRegistrationHandler.setItemName(new ItemCreepvineSeedCluster(), "creepvine_seed_cluster"),
-
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "lubricant"),
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "silicone_rubber"),
 					ItemRegistrationHandler.setItemName(new ItemTooltip(), "fiber_mesh"),
-
 					ItemRegistrationHandler.setItemName(new ItemDivingHelm(ModMaterials.DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.basicDivingGear), "diving_mask"),
 					ItemRegistrationHandler.setItemName(new ItemDivingChest(ModMaterials.DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.basicDivingGear), "standard_o2_tank"),
 					ItemRegistrationHandler.setItemName(new ItemDivingLegs(ModMaterials.DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.basicDivingGear), "wetsuit_leggings"),
 					ItemRegistrationHandler.setItemName(new ItemDivingFeet(ModMaterials.DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.basicDivingGear), "fins"),
-
 					ItemRegistrationHandler.setItemName(new ItemDivingHelm(ModMaterials.IMPROVED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.improvedDivingGear), "rebreather"),
 					ItemRegistrationHandler.setItemName(new ItemDivingChest(ModMaterials.IMPROVED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.improvedDivingGear), "high_capacity_o2_tank"),
 					ItemRegistrationHandler.setItemName(new ItemDivingLegs(ModMaterials.IMPROVED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.improvedDivingGear), "improved_wetsuit_leggings"),
