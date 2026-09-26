@@ -5,7 +5,6 @@ import org.lwjgl.opengl.GL11;
 import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
 import meldexun.better_diving.capability.diving.ICapabilityDivingAttributes;
-import meldexun.better_diving.init.ModItems;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelPlayer;
