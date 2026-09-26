@@ -6,7 +6,6 @@ import meldexun.better_diving.init.ModBlocks;
 import meldexun.better_diving.init.ModCapabilities;
 import meldexun.better_diving.init.ModItems;
 import meldexun.better_diving.init.ModPackets;
-import meldexun.better_diving.init.ModWorldGenerators;
 import meldexun.better_diving.integration.ArtemisLib;
 import meldexun.better_diving.integration.IndustrialCraft;
 import meldexun.better_diving.integration.MatterOverdrive;
@@ -79,7 +78,6 @@ public class BetterDiving {
 		ModItems.registerOreDictionaryEntries();
 		ModItems.registerFurnaceRecipes();
 		ModBlocks.addBlockDrops();
-		ModWorldGenerators.registerWorldGenerators();
 	}
 
 	@EventHandler
