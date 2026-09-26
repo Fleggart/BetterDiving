@@ -12,25 +12,12 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class ClientProxy implements IProxy {
 
-	
-	// public static KeyBinding keyBindSwapBattery = new KeyBinding("Swap battery", Keyboard.KEY_R, "Better Diving");
-
-	@Override
-	public void preInit() {
-
-	}
-
 	@Override
 	public void init() {
 		
 		// ClientRegistry.registerKeyBinding(keyBindSwapBattery);
 
 		ClientEventHandler.registerRenderers();
-	}
-
-	@Override
-	public void postInit() {
-
 	}
 
 	@Override
