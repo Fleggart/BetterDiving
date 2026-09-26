@@ -6,7 +6,6 @@ import meldexun.better_diving.BetterDiving;
 import meldexun.better_diving.capability.diving.CapabilityDivingAttributesProvider;
 import meldexun.better_diving.capability.diving.ICapabilityDivingAttributes;
 import meldexun.better_diving.client.renderer.entity.RenderPlayerCustom;
-import meldexun.better_diving.init.ModItems;
 import meldexun.better_diving.integration.ArtemisLib;
 import meldexun.better_diving.item.AbstractItemDivingGear;
 import meldexun.better_diving.util.BetterDivingConfig;
@@ -80,16 +79,12 @@ public class ClientEventHandler {
 		double d = 0.0D;
 
 		if (time >= 0.0D && time <= 1900.0D) {
-			// Morning ticks 0 -> 1900
 			d = 1.0D - time / 1900.0D;
 		} else if (time > 1900.0D && time <= 13067.0D) {
-			// Day ticks 1900 -> 13067
 			d = 0.0D;
 		} else if (time > 13067.0D && time <= 15250.0D) {
-			// Evening ticks 13067 -> 15250
 			d = (time - 13067.0D) / 2183.0D;
 		} else if (time > 15250.0D && time <= 24000.0D) {
-			// Night ticks 15250 -> 24000
 			d = 1.0D;
 		}
 
@@ -114,16 +109,12 @@ public class ClientEventHandler {
 		double d = 0.0D;
 
 		if (time >= 0.0D && time <= 1900.0D) {
-			// Morning ticks 0 -> 1900
 			d = 1.0D - time / 1900.0D;
 		} else if (time > 1900.0D && time <= 13067.0D) {
-			// Day ticks 1900 -> 13067
 			d = 0.0D;
 		} else if (time > 13067.0D && time <= 15250.0D) {
-			// Evening ticks 13067 -> 15250
 			d = (time - 13067.0D) / 2183.0D;
 		} else if (time > 15250.0D && time <= 24000.0D) {
-			// Night ticks 15250 -> 24000
 			d = 1.0D;
 		}
 
@@ -161,7 +152,8 @@ public class ClientEventHandler {
 		EntityPlayer player = event.getEntityPlayer();
 		ICapabilityDivingAttributes idiving = player.getCapability(CapabilityDivingAttributesProvider.DIVING_ATTRIBUTES, null);
 
-		if (idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
+		// 已删除滑翔机判断，仅保留 divingTick 条件
+		if (idiving.getDivingTick() > 0.0F) {
 			double divingTick = MathHelper.clampedLerp(idiving.getPrevDivingTick(), idiving.getDivingTick(), partialTicks);
 			double divingTickHorizontal = MathHelper.clampedLerp(idiving.getPrevDivingTickHorizontal(), idiving.getDivingTickHorizontal(), partialTicks);
 			double divingTickVertical = MathHelper.clampedLerp(idiving.getPrevDivingTickVertical(), idiving.getDivingTickVertical(), partialTicks);
@@ -218,7 +210,8 @@ public class ClientEventHandler {
 		EntityPlayer player = event.getEntityPlayer();
 		ICapabilityDivingAttributes idiving = player.getCapability(CapabilityDivingAttributesProvider.DIVING_ATTRIBUTES, null);
 
-		if (idiving.getDivingTick() > 0.0F || player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
+		// 已删除滑翔机判断，仅保留 divingTick 条件
+		if (idiving.getDivingTick() > 0.0F) {
 			GL11.glPopMatrix();
 			player.prevRotationPitch = ClientEventHandler.prevRotationPitch;
 			player.rotationPitch = ClientEventHandler.rotationPitch;
