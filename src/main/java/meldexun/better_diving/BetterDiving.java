@@ -2,7 +2,7 @@ package meldexun.better_diving;
 
 import org.apache.logging.log4j.Logger;
 
-import meldexun.better_diving.init.ModBlocks;
+
 import meldexun.better_diving.init.ModCapabilities;
 import meldexun.better_diving.init.ModItems;
 import meldexun.better_diving.init.ModPackets;
@@ -77,7 +77,6 @@ public class BetterDiving {
 
 		ModItems.registerOreDictionaryEntries();
 		ModItems.registerFurnaceRecipes();
-		ModBlocks.addBlockDrops();
 	}
 
 	@EventHandler
