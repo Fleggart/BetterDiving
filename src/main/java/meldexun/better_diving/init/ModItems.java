@@ -13,7 +13,7 @@ import meldexun.better_diving.item.ItemDivingHelm;
 import meldexun.better_diving.item.ItemDivingLegs;
 import meldexun.better_diving.item.ItemFish;
 import meldexun.better_diving.item.ItemPowerCell;
-import meldexun.better_diving.item.ItemSeaglide;
+
 import meldexun.better_diving.item.ItemTooltip;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.creativetab.CreativeTabs;
@@ -80,9 +80,6 @@ public class ModItems {
 	public static final ItemFish BOOMERANG = null;
 	public static final ItemFish BOOMERANG_COOKED = null;
 	public static final ItemFish BOOMERANG_CURED = null;
-
-	
-	public static final ItemSeaglide SEAGLIDE = null;
 
 	private ModItems() {
 
