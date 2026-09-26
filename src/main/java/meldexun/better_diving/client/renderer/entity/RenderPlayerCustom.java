@@ -28,21 +28,7 @@ public class RenderPlayerCustom extends RenderPlayer {
 
 	public RenderPlayerCustom(RenderManager renderManager, boolean useSmallArms) {
 		super(renderManager, useSmallArms);
-		this.mainModel = new ModelPlayer(0.0F, useSmallArms) {
-			@Override
-			public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
-				super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
-				EntityPlayer player = (EntityPlayer) entityIn;
-				if (player.getHeldItemMainhand().getItem() == ModItems.SEAGLIDE) {
-					this.bipedLeftArm.rotateAngleX = (float) Math.toRadians(-90.0D);
-					this.bipedLeftArm.rotateAngleY = 0.0F;
-					this.bipedLeftArm.rotateAngleZ = 0.0F;
-					this.bipedRightArm.rotateAngleX = (float) Math.toRadians(-90.0D);
-					this.bipedRightArm.rotateAngleY = 0.0F;
-					this.bipedRightArm.rotateAngleZ = 0.0F;
-				}
-			}
-		};
+		// 已移除滑翔机手臂姿态逻辑
 	}
 
 	@Override
