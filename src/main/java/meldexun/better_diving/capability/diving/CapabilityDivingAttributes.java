@@ -8,7 +8,6 @@ import meldexun.better_diving.integration.MatterOverdrive;
 import meldexun.better_diving.integration.Metamorph;
 import meldexun.better_diving.integration.Vampirism;
 import meldexun.better_diving.item.AbstractItemDivingGear;
-import meldexun.better_diving.item.ItemSeaglide;
 import meldexun.better_diving.network.packet.CPacketSyncPlayerInput;
 import meldexun.better_diving.network.packet.SPacketSyncOxygen;
 import meldexun.better_diving.util.BetterDivingConfig;
@@ -249,10 +248,6 @@ public class CapabilityDivingAttributes implements ICapabilityDivingAttributes {
 								rotationPitch = (rotationPitch - 90.0F) / 2.0F;
 								up = 0;
 							}
-						}
-
-						if (ItemSeaglide.canUseSeaglide(this.player) && !inputForward) {
-							speed *= 0.4D;
 						}
 
 						this.move3D(this.player, strafe, up, forward, speed, rotationYaw, rotationPitch);
@@ -500,9 +495,6 @@ public class CapabilityDivingAttributes implements ICapabilityDivingAttributes {
 
 	@Override
 	public double getSwimSpeedFromPlayer() {
-		if (ItemSeaglide.canUseSeaglide(this.player)) {
-			return BetterDivingConfig.getInstance().divingValues.seaglideSpeed;
-		}
 
 		double swimSpeedBase = this.getSwimSpeed();
 		double swimSpeedBonus = 0.0D;

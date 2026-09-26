@@ -13,7 +13,6 @@ import meldexun.better_diving.item.ItemDivingHelm;
 import meldexun.better_diving.item.ItemDivingLegs;
 import meldexun.better_diving.item.ItemFish;
 import meldexun.better_diving.item.ItemPowerCell;
-import meldexun.better_diving.item.ItemSeaglide;
 import meldexun.better_diving.item.ItemTooltip;
 import meldexun.better_diving.util.BetterDivingConfig;
 import net.minecraft.creativetab.CreativeTabs;
@@ -42,8 +41,6 @@ public class ModItems {
 	public static final ItemBattery BATTERY = null;
 	public static final ItemPowerCell POWER_CELL = null;
 
-	
-
 	public static final ItemTooltip LUBRICANT = null;
 	public static final ItemTooltip SILICONE_RUBBER = null;
 	public static final ItemTooltip FIBER_MESH = null;
@@ -63,8 +60,6 @@ public class ModItems {
 	public static final ItemDivingLegs REINFORCED_WETSUIT_LEGGINGS = null;
 	public static final ItemDivingFeet REINFORCED_FINS = null;
 
-	
-
 	public static final ItemFish PEEPER = null;
 	public static final ItemFish PEEPER_COOKED = null;
 	public static final ItemFish PEEPER_CURED = null;
@@ -80,9 +75,6 @@ public class ModItems {
 	public static final ItemFish BOOMERANG = null;
 	public static final ItemFish BOOMERANG_COOKED = null;
 	public static final ItemFish BOOMERANG_CURED = null;
-
-	
-	public static final ItemSeaglide SEAGLIDE = null;
 
 	private ModItems() {
 
@@ -126,8 +118,6 @@ public class ModItems {
 					ItemRegistrationHandler.setItemName(new ItemDivingLegs(ModMaterials.REINFORCED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.reinforcedDivingGear), "reinforced_wetsuit_leggings"),
 					ItemRegistrationHandler.setItemName(new ItemDivingFeet(ModMaterials.REINFORCED_DIVING_GEAR_ARMOR_MATERIAL, BetterDivingConfig.getInstance().divingGear.reinforcedDivingGear), "reinforced_fins"),
 
-					
-
 					ItemRegistrationHandler.setItemName(new ItemFish(1, 0.5F), "peeper"),
 					ItemRegistrationHandler.setItemName(new ItemFish(3, 0.5F), "peeper_cooked"),
 					ItemRegistrationHandler.setItemName(new ItemFish(4, 0.5F), "peeper_cured"),
@@ -142,10 +132,7 @@ public class ModItems {
 					ItemRegistrationHandler.setItemName(new ItemFish(4, 0.5F), "holefish_cured"),
 					ItemRegistrationHandler.setItemName(new ItemFish(1, 0.5F), "boomerang"),
 					ItemRegistrationHandler.setItemName(new ItemFish(3, 0.5F), "boomerang_cooked"),
-					ItemRegistrationHandler.setItemName(new ItemFish(4, 0.5F), "boomerang_cured"),
-
-					
-					ItemRegistrationHandler.setItemName(new ItemSeaglide(), "seaglide") };
+					ItemRegistrationHandler.setItemName(new ItemFish(4, 0.5F), "boomerang_cured") };
 
 			IForgeRegistry<Item> registry = event.getRegistry();
 

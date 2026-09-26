@@ -81,9 +81,7 @@ public class BetterDivingConfig {
 		@ByteBufHelper.Sync
 		@Config.Comment("Enable/Disable packets to sync oxygen. Should prevent desync of client and server. But increases network traffic and comes with a latency. Not recommended unless you have experienced desync.")
 		public boolean oxygenSyncPackets = false;
-		@ByteBufHelper.Sync
-		@Config.Comment("Enable/Disable packets to sync seaglide energy. Should prevent desync of client and server. But increases network traffic and comes with a latency. Not recommended unless you have experienced desync.")
-		public boolean seaglideEnergySyncPackets = false;
+		
 		@ByteBufHelper.Sync
 		@Config.Comment("Enable/Disable packets to sync seamoth energy. Should prevent desync of client and server. But increases network traffic and comes with a latency. Not recommended unless you have experienced desync.")
 		public boolean seamothEnergySyncPackets = false;
@@ -230,15 +228,6 @@ public class BetterDivingConfig {
 		@Config.Comment("Break speed bonus underwater with the Aqua Affinity Enchantment")
 		@Config.RangeDouble(min = 0.0D, max = 1.0D)
 		public double breakSpeedAquaAffinity = 0.15D;
-
-		@ByteBufHelper.Sync
-		@Config.Comment("Amount of energy the seaglide uses per tick (20 ticks = 1 second)")
-		@Config.RangeInt(min = 0, max = 1000)
-		public int seaglideEnergyUsage = 65;
-		@ByteBufHelper.Sync
-		@Config.Comment("Seaglide swim speed. (blocks per second = x * 100)")
-		@Config.RangeDouble(min = 0.0D, max = 1.0D)
-		public double seaglideSpeed = 0.11D;
 
 		@ByteBufHelper.Sync
 		@Config.Comment("Amount of energy the seamoth uses per tick (20 ticks = 1 second)")
